@@ -68,7 +68,7 @@ UNION ALL
         JOIN PTS_VISIT_2019 D ON D.PATIENT_NUM = OBS.PATIENT_NUM
    	WHERE OBS.START_DATE >= DATEFROMPARTS(2019,01,01) AND OBS.START_DATE <= DATEFROMPARTS(2019,12,31)
             AND EXISTS (SELECT * FROM @CRCSchema.CONCEPT_DIMENSION c 
-                        WHERE c.concept_path LIKE  '\ACT\PROCEDURE\%' AND obs.concept_cd = c.concept_cd))num,
+                        WHERE c.concept_path LIKE  '\ACT\Procedures\%' AND obs.concept_cd = c.concept_cd))num,
 	den
 	
 UNION ALL
